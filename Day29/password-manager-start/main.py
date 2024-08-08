@@ -1,6 +1,7 @@
 from tkinter import messagebox
 from tkinter import *
 import random
+import pyperclip
 
 def gen_pass():
     password_entry.delete(0,END)
@@ -26,6 +27,7 @@ def gen_pass():
     random.shuffle(password_list)
     password = "".join(password_list)
     password_entry.insert(0, password)
+    pyperclip.copy(password)
 
 
 def add_feature():
