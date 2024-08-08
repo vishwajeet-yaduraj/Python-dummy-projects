@@ -6,8 +6,8 @@ RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
-WORK_MIN = 0.5
-SHORT_BREAK_MIN = 0.5
+WORK_MIN = 1
+SHORT_BREAK_MIN = 1
 LONG_BREAK_MIN = 20
 reps = 0
 timer = None
@@ -15,9 +15,8 @@ timer = None
 
 # ---------------------------- TIMER RESET ------------------------------- #
 def reset_timer():
-    global timer
     window.after_cancel(timer)
-    tick_label.config(text=None)
+    tick_label.config(text="")
     canvas.itemconfig(timer_text, text="00:00")
     label.config(text="Timer")
     global reps
@@ -49,16 +48,17 @@ def count_down(count):
     count_sec = count % 60
     if count_sec < 10:
         count_sec = f"0{count_sec}"
-    canvas.itemconfig(timer_text, text=f"0{count_min}:{count_sec}")
+    canvas.itemconfig(timer_text, text=f"{count_min}:{count_sec}")
     if count > 0:
         global timer
         timer = window.after(1000, count_down, count - 1)
     else:
         start_timer()
-        tick_text = ["✔"]
-        if reps % 2 == 0:
+        tick_text = ""
+        for _ in range(reps//2):
+            tick_text += "✔"
             tick_label.config(text=tick_text)
-            tick_text.append("✔")
+
 
 
 # ---------------------------- UI SETUP ------------------------------- #
