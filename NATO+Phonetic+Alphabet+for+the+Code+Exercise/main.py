@@ -14,8 +14,7 @@ while True:
         break
     try:
         output_list = [phonetic_dict[letter] for letter in word]
-        print(output_list)
     except KeyError:
         print("Please! Entry only letters from alphabet")
-#
-#
+    else:
+        print(output_list)
