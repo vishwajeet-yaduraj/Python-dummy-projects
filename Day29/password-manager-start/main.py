@@ -44,7 +44,7 @@ def add_feature():
                                            f"email:{email_entered}\npassword:{password_entered}\n"
                                            f"Would you like to proceed?")
     if is_ok:
-        with open("data.py", 'a') as file:
+        with open("data.txt", 'a') as file:
             file.write(to_add)
             file.write("\n")
         password_entry.delete(0, END)
