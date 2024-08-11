@@ -114,7 +114,7 @@ email_entry.grid(row=2, column=1, columnspan=2)
 password_entry = Entry(width=21)
 password_entry.grid(row=3, column=1)
 
-generate_password_button = Button(text="Generate password", width=15, command=gen_pass)
+generate_password_button = Button(text="Generate password", width=14, command=gen_pass)
 generate_password_button.grid(row=3, column=2)
 
 add_button = Button(text="Add", width=30, command=add_feature)
