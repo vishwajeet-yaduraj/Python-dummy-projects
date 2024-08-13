@@ -2,8 +2,8 @@ import socket
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-host = '103.208.70.208'
-port = 8080
+host = '192.168.106.40'
+port = 12345
 
 client_socket.connect((host, port))
 
