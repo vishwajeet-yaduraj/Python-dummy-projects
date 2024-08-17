@@ -9,7 +9,7 @@ parameters = {
     "appid": api_key,
     "cnt": 4
 }
-account_sid = "ACd0b9c3aeee0a8602cefc1776c157dba4"
+account_sid = os.getenv("ACC_SID")
 auth_token = os.getenv("AUTH_TOKEN")
 
 response = requests.get(url="https://api.openweathermap.org/data/2.5/forecast", params=parameters)
