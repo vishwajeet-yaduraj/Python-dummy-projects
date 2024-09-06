@@ -14,7 +14,7 @@ class DataManager:
         self.password = os.getenv("SHEETY_PASSWORD")
         self.url = url
         self.header = headers
-        self.response = requests.get(url=self.url,headers=self.header)
+        self.response = requests.get(url=self.url, headers=self.header)
 
     def put_data(self, data):
         for data in data:
@@ -30,5 +30,10 @@ class DataManager:
     def get_data(self):
         return self.response.json()['prices']
 
-
-
+# For testing purposes
+# sheety_url = "https://api.sheety.co/cf8a35393f70acd530021cfeefaeaf18/flight/prices"
+# sheety_header = {
+#     "Authorization": os.getenv("AUTH")
+# }
+# data = DataManager(url=sheety_url,headers=sheety_header)
+# print(data.get_data())

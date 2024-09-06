@@ -8,7 +8,7 @@ import os
 
 load_dotenv()
 
-sheety_url = "https://api.sheety.co/726667eaff2af514f687dcb8822f5e89/flightPrices/prices"
+sheety_url = "https://api.sheety.co/cf8a35393f70acd530021cfeefaeaf18/flight/prices"
 sheety_header = {
     "Authorization": os.getenv("AUTH")
 }
