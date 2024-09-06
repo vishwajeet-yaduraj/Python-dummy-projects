@@ -16,7 +16,7 @@ class FlightData:
         self.date_today = dt.date.today()
 
     def find_cheapest_flight(self):
-        url = "test.api.amadeus.com/v2"
+        FLIGHT_ENDPOINT = "https://test.api.amadeus.com/v2/shopping/flight-offers"
         body = {
             "originLocationCode": self.originLocationCode,
             "destinationLocationCode": "PAR",
@@ -29,7 +29,7 @@ class FlightData:
             "Authorization": f"Bearer {self.token}"
         }
 
-        response = requests.get(url=url, data=body, headers=headers)
+        response = requests.get(url=FLIGHT_ENDPOINT, data=body, headers=headers)
         response.raise_for_status()
         print(response.json())
 
